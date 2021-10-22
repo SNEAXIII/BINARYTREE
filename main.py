@@ -31,7 +31,7 @@ def taille(arb):
     """nombre de noeuds de arb"""
     if arb is None:
         return 0
-    return 1+taille(arb)
+    return 1 + taille(arb)
 
 def hauteur(arb):
     """renvoie la hauteur de l'arbre"""
