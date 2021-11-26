@@ -183,3 +183,20 @@ def minimum(abr):
         return None
     minimum(abr.gauche)
     return abr.valeur
+
+#Exercice 11
+
+def ajouteV3(abr,e):
+    if abr is None:
+        return Noeud(None, e, None)
+
+    if abr.valeur == e:
+        return None
+
+    if e > abr.valeur:
+        return Noeud(abr.gauche, abr.valeur, ajouteV3(e, abr.droit))
+        
+    else:
+        return Noeud(ajouteV3(e, abr.gauche), abr.valeur, abr.droit)
+
+#Exercice 12
