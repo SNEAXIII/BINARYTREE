@@ -159,26 +159,18 @@ class ABR:
 
     def InFixe(self):
         #méthode qui affiche les éléments de a lors d'un parcours infixe
-        if self.racine is None:
+        if self.racine.valeur is None:
             return None
         self.Infixe(self.racine.gauche)
         print(self.racine.valeur,end=",")
         self.Infixe(self.racine.droit)
 
+"""
     def lister(self):
         #trucs utiles
         self.remplir()
-        triSelecte(liste"""c'est le return de remplir""")
+        triSelecte(liste#c'est le return de remplir)
 
-def triSelecte(l):
-    nb_len = len(l)
-    rg = 0
-    while rg < nb_len:
-        minus = mini(l,rg)
-        echanger(l,rg,minus)
-        rg+=1
-
-"""
 #Exercice 10
 
 1. Le plus petit élément se trouve le plus à gauche dans un arbre
@@ -227,7 +219,7 @@ def affiche(arb):
   affiche(arb.droit)
   print(')',end='')
 
-affiche(ajouteV3(abr1,6))
+
 
 #Exercice 12
 
@@ -241,32 +233,41 @@ def compte(e, abr):
 
 abr2 = Noeud(Noeud(Noeud(None, 5, None), 5, Noeud(None, 3, None)), 4, Noeud(None, 5, None))
 
-compte(5, abr2)
 
 #Exercice 13
+def parcoursInfixe(arb):
+    #affiche les éléments de a lors d'un parcours infixe
+    if arb is None:
+        return None
+    parcoursInfixe(arb.gauche)
+    print(arb.valeur,end=",")
+    parcoursInfixe(arb.droit)
 
 #1. Modifie le tableau après un parcours InFixe de l'ABR arb
 
-def remplir(arb,tab):
-        if self.racine is None:
+def remplir(arb,tableau):
+    if arb is None:
         return None
-    self.Infixe(self.racine.gauche)
-    liste.append(self.racine.valeur, end=",") #print(self.racine.valeur,end=",")
-    self.Infixe(self.racine.droit)
+    remplir(arb.gauche,tableau)
+    tableau.append(arb.valeur)
+    remplir(arb.droit,tableau)
+    return tableau
 
-arbre_bin = ABR
-
-"""j'ai fait comme je pouvais et c'est pas ouf je vois ca"""
+parcoursInfixe(abr2)
+print()
+tab = []
+remplir(abr2,tab)
+print(tab)
 
 #2. compléter la classe ABR avec la méthode lister
 
-"""j'ai essayer de bidouiller quelque chose de vraiment moyen bof'"""
 
 #3 Programmez la fonction
 
-"""pourquoi faut la faire avec ABR ?......... m'énerve ce truc --> je bloque totalement dsl j'arrête pour faire la physique, déjà 1h30 que je suis dessus là"""
 def triABR(tab):
 
     pass
 
 #4. Quelle est la complexité ? -> c'est une fonction en complexité O( ... )
+
+
