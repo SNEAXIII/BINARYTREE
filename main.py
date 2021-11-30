@@ -164,6 +164,20 @@ class ABR:
         self.Infixe(self.racine.gauche)
         print(self.racine.valeur,end=",")
         self.Infixe(self.racine.droit)
+
+    def lister(self):
+        #trucs utiles
+        self.remplir()
+        triSelecte(liste"""c'est le return de remplir""")
+
+def triSelecte(l):
+    nb_len = len(l)
+    rg = 0
+    while rg < nb_len:
+        minus = mini(l,rg)
+        echanger(l,rg,minus)
+        rg+=1
+
 """
 #Exercice 10
 
@@ -229,12 +243,30 @@ abr2 = Noeud(Noeud(Noeud(None, 5, None), 5, Noeud(None, 3, None)), 4, Noeud(None
 
 compte(5, abr2)
 
-#Exercice 13 -> exercice à rendre
+#Exercice 13
 
-def remplir(abr,tab):
-    #méthode qui affiche les éléments de a lors d'un parcours infixe
-    if self.racine is None:
+#1. Modifie le tableau après un parcours InFixe de l'ABR arb
+
+def remplir(arb,tab):
+        if self.racine is None:
         return None
     self.Infixe(self.racine.gauche)
-    print(self.racine.valeur,end=",")
+    liste.append(self.racine.valeur, end=",") #print(self.racine.valeur,end=",")
     self.Infixe(self.racine.droit)
+
+arbre_bin = ABR
+
+"""j'ai fait comme je pouvais et c'est pas ouf je vois ca"""
+
+#2. compléter la classe ABR avec la méthode lister
+
+"""j'ai essayer de bidouiller quelque chose de vraiment moyen bof'"""
+
+#3 Programmez la fonction
+
+"""pourquoi faut la faire avec ABR ?......... m'énerve ce truc --> je bloque totalement dsl j'arrête pour faire la physique, déjà 1h30 que je suis dessus là"""
+def triABR(tab):
+
+    pass
+
+#4. Quelle est la complexité ? -> c'est une fonction en complexité O( ... )
